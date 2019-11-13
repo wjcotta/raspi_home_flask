@@ -8,7 +8,7 @@ def index():
 
 @app.route('/ClothesWasher')
 def ClothesWasher():
-	return 'Clothes Washer'
+	return render_template('appliance.html')
 
 @app.route('/ClothesDryer/')
 def ClothesDryer():
@@ -18,6 +18,10 @@ def ClothesDryer():
 def Dishwasher():
 	return 'Dishwasher'
 
+@app.route('/hello/<name>')
+def hello(name):
+		return render_template('page.html', name=name)
 
+		
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0')
